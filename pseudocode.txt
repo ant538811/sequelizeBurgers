@@ -1,0 +1,38 @@
+This document was created for the purpose of clarifying the intended functions of the project
+
+
+----server.js----
+This file will first require the express, body-parser, and method override, and express-handlebars node packages.
+app will be created as an instance of express to use the methods from the packages.
+The file also sets a route "/" to burgers_controllers.js in the controllers directory.
+The server will set a port and listen to 3000.
+
+----connection.js----
+This file will establish a connection with the SQL database and export the module for use.
+
+----orm.js----
+This file creates functions necessary to manipulate the SQL table and export the module for use.
+
+----burgers_controllers.js----
+This file requires the express package and the burger.js file from the models directory.
+This file will create route methods for the project to create new burgers, update existing burgers, and delete them.
+
+----burger.js----
+This file provides the burger model used used for the project.
+This model creates the burger object with methods defined by the orm.
+
+----schema.sql----
+This file is a query to create the burgers_db database and the burger table with the following fields: id, burger_name, devoured, and date.
+The id field is an auto-incrementing integer field and serves as the primary key of the table.
+The burger_name field string field with maximum character limit of 255 characters.
+The devoured field is a Boolean type field.
+The date field takes in the value of the timestamp.
+
+----seeds.sql----
+This file inserts rows into the the burgers_db database.
+
+----main.handlebars----
+This file will create the main basis for the rendering of html and call the burge_style.css file.
+
+----index.handlebars----
+This file will create the basis for rendering the status of burger objects into html.
