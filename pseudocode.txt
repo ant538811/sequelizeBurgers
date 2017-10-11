@@ -6,9 +6,11 @@ This file will first require the express, body-parser, and method override, and 
 app will be created as an instance of express to use the methods from the packages.
 The file also sets a route "/" to burgers_controllers.js in the controllers directory.
 The server will set a port and listen to 3000.
+UPDATE: Has been changed to now use sequelize. Now requires the models folder.
 
 ----connection.js----
-This file will establish a connection with the SQL database and export the module for use.
+This file will establish a connection with the SQL database and export the module for use. 
+UPDATE: Now we are using config.json to establish database credentials.
 
 ----orm.js----
 This file creates functions necessary to manipulate the SQL table and export the module for use.
@@ -20,6 +22,7 @@ This file will create route methods for the project to create new burgers, updat
 ----burger.js----
 This file provides the burger model used used for the project.
 This model creates the burger object with methods defined by the orm.
+UPDATE: Has been changed to now use sequelize. Burger and its attributes are now defined with sequelize.
 
 ----schema.sql----
 This file is a query to create the burgers_db database and the burger table with the following fields: id, burger_name, devoured, and date.
@@ -36,3 +39,6 @@ This file will create the main basis for the rendering of html and call the burg
 
 ----index.handlebars----
 This file will create the basis for rendering the status of burger objects into html.
+
+----config.json----
+Establishes credentials for the development server.
